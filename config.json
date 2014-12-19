@@ -1,0 +1,47 @@
+{
+    "fastqc_rules": {
+        "load_env": "module load bioinfo-tools FastQC/0.11.1"
+    },
+    "bowtie2_rules": {
+        "platform": "Illumina",
+        "mapping_params": {
+            "default": "",
+            "very-fast": "--very-fast"
+        },
+        "samples": {
+            "P911_101": ["P911_101_4", "P911_101_7"],
+            "P911_102": ["P911_102_3", "P911_102_5"],
+            "P911_103": ["P911_103"],
+            "P911_104": ["P911_104"],
+            "P911_105": ["P911_105"],
+            "P911_106": ["P911_106"]
+        },
+        "units": {
+            "P911_101_4":
+                ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_101/140207_AC3NVGACXX/4_140207_AC3NVGACXX_P911_101_1.fastq.gz",
+                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_101/140207_AC3NVGACXX/4_140207_AC3NVGACXX_P911_101_2.fastq.gz"],
+            "P911_101_7":
+                ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_101/140220_AC3UBFACXX/7_140220_AC3UBFACXX_P911_101_1.fastq.gz",
+                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_101/140220_AC3UBFACXX/7_140220_AC3UBFACXX_P911_101_2.fastq.gz"],
+            "P911_102_4":
+                ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_102/140207_AC3NVGACXX/4_140207_AC3NVGACXX_P911_102_1.fastq.gz",
+                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_102/140207_AC3NVGACXX/4_140207_AC3NVGACXX_P911_102_2.fastq.gz"],
+            "P911_102_7":
+                ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_102/140220_AC3UBFACXX/7_140220_AC3UBFACXX_P911_102_1.fastq.gz",
+                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_102/140220_AC3UBFACXX/7_140220_AC3UBFACXX_P911_102_2.fastq.gz"],
+            "P911_103":
+                ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_103/140207_AC3NVGACXX/5_140207_AC3NVGACXX_P911_103_1.fastq.gz",
+                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_103/140207_AC3NVGACXX/5_140207_AC3NVGACXX_P911_103_2.fastq.gz"],
+            "P911_104":
+                ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_104/140207_AC3NVGACXX/5_140207_AC3NVGACXX_P911_104_1.fastq.gz",
+                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_104/140207_AC3NVGACXX/5_140207_AC3NVGACXX_P911_104_2.fastq.gz"],
+            "P911_105":
+                ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_105/140207_AC3NVGACXX/5_140207_AC3NVGACXX_P911_105_1.fastq.gz",
+                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_105/140207_AC3NVGACXX/5_140207_AC3NVGACXX_P911_105_2.fastq.gz"],
+            "P911_106":
+                ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_106/140207_AC3NVGACXX/4_140207_AC3NVGACXX_P911_106_1.fastq.gz",
+                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_106/140207_AC3NVGACXX/4_140207_AC3NVGACXX_P911_106_2.fastq.gz"]
+        },
+        "load_env": "module load bioinfo-tools bowtie2/2.2.3"
+    }
+}
