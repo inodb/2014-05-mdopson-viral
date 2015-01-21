@@ -97,8 +97,26 @@
         "cores": "16",
         "extra_parameters": ""
     },
+    "schedule_ray_assembly": {
+        "days": 1,
+        "hours": 0,
+        "minutes": 0,
+        "partition": "node",
+        "cores": "64",
+        "extra_parameters": ""
+    },
+    "schedule_merge_newbler": {
+        "days": 1,
+        "hours": 0,
+        "minutes": 0,
+        "partition": "node",
+        "cores": "8",
+        "extra_parameters": ""
+    },
     "schedule_fastqc": "schedule_bowtie2_index",
     "schedule_create_read_symlink": "schedule_short",
+    "schedule_ray_assembly_all": "schedule_short",
+    "schedule_merge_newbler_all": "schedule_short",
     "schedule_fastqc_all": "schedule_short",
     "schedule_trimmomatic_all": "schedule_short",
     "schedule_rpsblast_run_all": "schedule_default",

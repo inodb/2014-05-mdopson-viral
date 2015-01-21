@@ -2,9 +2,9 @@
     "trimmomatic_rules": {
         "jar": "/sw/apps/bioinfo/trimmomatic/0.32/milou/trimmomatic.jar",
         "trim_params": {
-            "TruSeq3-m2-pe20-se10-minlen36": "ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE-2.fa:2:30:10 MINLEN:36",
+            "TruSeq3-m2-pe30-se10-minlen36": "ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE-2.fa:2:30:10 MINLEN:36",
             "TruSeq3-m2-pe15-se05-minlen36": "ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE-2.fa:2:15:5 MINLEN:36",
-            "TruSeq3-m4-pe20-se10-minlen36": "ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE-2.fa:4:30:10 MINLEN:36",
+            "TruSeq3-m4-pe30-se10-minlen36": "ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE-2.fa:4:30:10 MINLEN:36",
             "TruSeq3-m4-pe15-se05-minlen36": "ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE-2.fa:4:15:5 MINLEN:36"
         }
     },
@@ -19,11 +19,11 @@
         },
         "samples": {
             "P911_101": ["P911_101_4", "P911_101_7"],
-            "P911_102": ["P911_102_3", "P911_102_5"],
+            "P911_102": ["P911_102_4", "P911_102_7"],
             "P911_103": ["P911_103"],
             "P911_104": ["P911_104"],
             "P911_105": ["P911_105"],
-            "P911_106": ["P911_106"]
+            "P911_106": ["P911_106_4", "P911_106_7"]
         },
         "units": {
             "P911_101_4":
@@ -47,10 +47,31 @@
             "P911_105":
                 ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_105/140207_AC3NVGACXX/5_140207_AC3NVGACXX_P911_105_1.fastq.gz",
                  "/proj/b2013127/INBOX/M.Dopson_13_05/P911_105/140207_AC3NVGACXX/5_140207_AC3NVGACXX_P911_105_2.fastq.gz"],
-            "P911_106":
+            "P911_106_4":
                 ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_106/140207_AC3NVGACXX/4_140207_AC3NVGACXX_P911_106_1.fastq.gz",
-                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_106/140207_AC3NVGACXX/4_140207_AC3NVGACXX_P911_106_2.fastq.gz"]
+                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_106/140207_AC3NVGACXX/4_140207_AC3NVGACXX_P911_106_2.fastq.gz"],
+            "P911_106_7":
+                ["/proj/b2013127/INBOX/M.Dopson_13_05/P911_106/140220_AC3UBFACXX/7_140220_AC3UBFACXX_P911_106_1.fastq.gz",
+                 "/proj/b2013127/INBOX/M.Dopson_13_05/P911_106/140220_AC3UBFACXX/7_140220_AC3UBFACXX_P911_106_2.fastq.gz"]
         },
         "load_env": "module load bioinfo-tools bowtie2/2.2.3"
+    },
+    "ray_rules" : {
+        "assembly_params": {
+            "default": ""
+        },
+        "kmers": [
+            "31",
+            "41",
+            "51",
+            "61",
+            "71",
+            "81"
+        ],
+        "mpi_cmd": "mpiexec -n 64",
+        "load_env": "module load bioinfo-tools Ray/2.3.0"
+    },
+    "assembly_merge_rules": {
+        "load_env": "export METASSEMBLE_DIR=/glob/inod/github/metassemble && source activate masmvali-env && module load bioinfo-tools 454-dataanalysis/2.6"
     }
 }
