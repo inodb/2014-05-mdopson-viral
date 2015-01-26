@@ -1,0 +1,65 @@
+            <html>
+            <head>
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.5.0/bootstrap-table.min.css">
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.5.0/bootstrap-table.min.js"></script>
+            <script src="https://raw.githubusercontent.com/wenzhixin/bootstrap-table/master/src/extensions/export/bootstrap-table-export.js"></script>
+            <script src="https://rawgit.com/kayalshri/tableExport.jquery.plugin/master/tableExport.js"></script>
+            <script src="https://rawgit.com/kayalshri/tableExport.jquery.plugin/master/jquery.base64.js"></script>
+            </head>
+            <body>
+                <h1>Assembly Stats</h1>
+                <div class="container">
+                    <table
+                           data-toggle="table"
+                           data-show-export="true"
+                           data-search="true"
+                           data-show-columns="true"
+                           data-url="data.json"
+                           data-sort-name="name"
+                           data-sort-order="asc"
+                           data-export="true">
+                        <thead>
+                            <tr>
+                                <th data-field="name"
+                                    data-sortable="true">
+                                    name
+                                </th>
+                                <th data-field="cut_off"
+                                    data-sortable="true">
+                                    cutoff
+                                </th>
+                                <th data-field="nr_contigs"
+                                    data-sortable="true">
+                                    nr_contigs
+                                </th>
+                                <th data-field="totbases"
+                                    data-sortable="true">
+                                    totbases
+                                </th>
+                                <th data-field="l50"
+                                    data-sortable="true">
+                                    l50
+                                </th>
+                                <th data-field="n50"
+                                    data-sortable="true">
+                                    n50
+                                </th>
+                                <th data-field="max_length"
+                                    data-sortable="true">
+                                    max_length
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </body>
+            </html>

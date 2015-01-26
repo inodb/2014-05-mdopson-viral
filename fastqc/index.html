@@ -1,83 +1,56 @@
-<html><head><style>body { text-align: center }</style></head><body>
-<h1>FastQC</h1>
-<a href='4_140207_AC3NVGACXX_P911_101_1_fastqc.html'>4_140207_AC3NVGACXX_P911_101_1_fastqc.html</a> 
-PASS:7 
-WARN:3 
-FAIL:2
-<br />
-<a href='4_140207_AC3NVGACXX_P911_101_2_fastqc.html'>4_140207_AC3NVGACXX_P911_101_2_fastqc.html</a> 
-PASS:7 
-WARN:3 
-FAIL:2
-<br />
-<a href='4_140207_AC3NVGACXX_P911_102_1_fastqc.html'>4_140207_AC3NVGACXX_P911_102_1_fastqc.html</a> 
-PASS:7 
-WARN:2 
-FAIL:3
-<br />
-<a href='4_140207_AC3NVGACXX_P911_102_2_fastqc.html'>4_140207_AC3NVGACXX_P911_102_2_fastqc.html</a> 
-PASS:7 
-WARN:2 
-FAIL:3
-<br />
-<a href='4_140207_AC3NVGACXX_P911_106_1_fastqc.html'>4_140207_AC3NVGACXX_P911_106_1_fastqc.html</a> 
-PASS:6 
-WARN:3 
-FAIL:3
-<br />
-<a href='4_140207_AC3NVGACXX_P911_106_2_fastqc.html'>4_140207_AC3NVGACXX_P911_106_2_fastqc.html</a> 
-PASS:6 
-WARN:2 
-FAIL:4
-<br />
-<a href='5_140207_AC3NVGACXX_P911_103_1_fastqc.html'>5_140207_AC3NVGACXX_P911_103_1_fastqc.html</a> 
-PASS:7 
-WARN:2 
-FAIL:3
-<br />
-<a href='5_140207_AC3NVGACXX_P911_103_2_fastqc.html'>5_140207_AC3NVGACXX_P911_103_2_fastqc.html</a> 
-PASS:7 
-WARN:2 
-FAIL:3
-<br />
-<a href='5_140207_AC3NVGACXX_P911_104_1_fastqc.html'>5_140207_AC3NVGACXX_P911_104_1_fastqc.html</a> 
-PASS:8 
-WARN:3 
-FAIL:1
-<br />
-<a href='5_140207_AC3NVGACXX_P911_104_2_fastqc.html'>5_140207_AC3NVGACXX_P911_104_2_fastqc.html</a> 
-PASS:8 
-WARN:3 
-FAIL:1
-<br />
-<a href='5_140207_AC3NVGACXX_P911_105_1_fastqc.html'>5_140207_AC3NVGACXX_P911_105_1_fastqc.html</a> 
-PASS:8 
-WARN:2 
-FAIL:2
-<br />
-<a href='5_140207_AC3NVGACXX_P911_105_2_fastqc.html'>5_140207_AC3NVGACXX_P911_105_2_fastqc.html</a> 
-PASS:8 
-WARN:2 
-FAIL:2
-<br />
-<a href='7_140220_AC3UBFACXX_P911_101_1_fastqc.html'>7_140220_AC3UBFACXX_P911_101_1_fastqc.html</a> 
-PASS:7 
-WARN:4 
-FAIL:1
-<br />
-<a href='7_140220_AC3UBFACXX_P911_101_2_fastqc.html'>7_140220_AC3UBFACXX_P911_101_2_fastqc.html</a> 
-PASS:8 
-WARN:2 
-FAIL:2
-<br />
-<a href='7_140220_AC3UBFACXX_P911_102_1_fastqc.html'>7_140220_AC3UBFACXX_P911_102_1_fastqc.html</a> 
-PASS:7 
-WARN:2 
-FAIL:3
-<br />
-<a href='7_140220_AC3UBFACXX_P911_102_2_fastqc.html'>7_140220_AC3UBFACXX_P911_102_2_fastqc.html</a> 
-PASS:8 
-WARN:1 
-FAIL:3
-<br />
+                    <html>
+                    <head>
+                    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                    <!-- Latest compiled and minified CSS -->
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+                    <!-- Latest compiled and minified JavaScript -->
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+                    <!-- Latest compiled and minified CSS -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.5.0/bootstrap-table.min.css">
+                    <!-- Latest compiled and minified JavaScript -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.5.0/bootstrap-table.min.js"></script>
+                    <script src="https://raw.githubusercontent.com/wenzhixin/bootstrap-table/master/src/extensions/export/bootstrap-table-export.js"></script>
+                    <script src="https://rawgit.com/kayalshri/tableExport.jquery.plugin/master/tableExport.js"></script>
+                    <script src="https://rawgit.com/kayalshri/tableExport.jquery.plugin/master/jquery.base64.js"></script>
+                    </head>
+                    <body>
+                        <h1>FastQC</h1>
+                        <div class="container">
+                            <table
+                                   data-toggle="table"
+                                   data-show-export="true"
+                                   data-search="true"
+                                   data-show-columns="true"
+                                   data-url="data.json"
+                                   data-sort-name="url"
+                                   data-sort-order="asc"
+                                   data-export="true">
+                                <thead>
+                                    <tr>
+                                        <th data-field="url"
+                                            data-sortable="true">
+                                            Reads
+                                        </th>
+                                        <th data-field="Total Sequences"
+                                            data-sortable="true">
+                                            Total Seq
+                                        </th>
+                                        <th data-field="PASS"
+                                            data-sortable="true">
+                                            PASS
+                                        </th>
+                                        <th data-field="WARN"
+                                            data-sortable="true">
+                                            WARN
+                                        </th>
+                                        <th data-field="FAIL"
+                                            data-sortable="true">
+                                            FAIL
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
 </body></html>

@@ -1,0 +1,53 @@
+            <html>
+            <head>
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.5.0/bootstrap-table.min.css">
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.5.0/bootstrap-table.min.js"></script>
+            <script src="https://raw.githubusercontent.com/wenzhixin/bootstrap-table/master/src/extensions/export/bootstrap-table-export.js"></script>
+            <script src="https://rawgit.com/kayalshri/tableExport.jquery.plugin/master/tableExport.js"></script>
+            <script src="https://rawgit.com/kayalshri/tableExport.jquery.plugin/master/jquery.base64.js"></script>
+            </head>
+            <body>
+                <h1>Mapping Stats</h1>
+                <div class="container">
+                    <table
+                           data-toggle="table"
+                           data-show-export="true"
+                           data-search="true"
+                           data-show-columns="true"
+                           data-url="data.json"
+                           data-sort-name="name"
+                           data-sort-order="asc"
+                           data-export="true">
+                        <thead>
+                            <tr>
+                                <th data-field="name"
+                                    data-sortable="true">
+                                    name
+                                </th>
+                                <th data-field="nr_reads"
+                                    data-sortable="true">
+                                    nr_reads
+                                </th>
+                                <th data-field="overall_alignment_rate"
+                                    data-sortable="true">
+                                    overall_alignment_rate
+                                </th>
+                                <th data-field="PERCENT_DUPLICATION"
+                                    data-sortable="true">
+                                    percent_duplication
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </body>
+            </html>
