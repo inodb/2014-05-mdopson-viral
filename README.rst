@@ -157,6 +157,12 @@ and mapped the reads back, because this is necessary for CONCOCT. One rule does 
 
     concoct_map_10K_all
 
+Generate the report:
+
+.. code-block::
+
+    mapping_report
+
 Run CONCOCT and annotation
 ==========================
 Ran CONCOCT through sbatch on milou with contigs bigger than 500, 700, 1000, 2000 and 3000:
