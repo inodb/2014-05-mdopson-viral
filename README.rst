@@ -15,11 +15,6 @@ microbial Single Copy Genes (SCGs).
 
 **UPDATE 2014-12** Redid full analysis after noticing adapter content in assemblies.
 
-Old Google docs for assemblies with adapter contamination
-==========================================================
-- `Assembly stats`_
-- `Mapping stats`_
-
 Install Snakemake
 ===================
 `Snakemake <https://bitbucket.org/johanneskoester/snakemake/wiki/Home>`_ has been used to make the analysis reproducible. Snakemake uses
@@ -214,6 +209,11 @@ Old pre-adapter contamination filtering analysis steps
 The old pre-adaptar contamination filtering analysis shows similar commands that can be directly pasted 
 in the bash terminal instead of using snakemake and might be more easily customizable for some. They 
 can be found in an `older version of this repo <https://github.com/inodb/2014-05-mdopson-viral/blob/d981e40c436176762439a14a72e47aeea3775c1f/README.rst>`_
+
+Old Google docs for assemblies with adapter contamination
+==========================================================
+- `Assembly stats`_
+- `Mapping stats`_
 
 .. _POG: http://www.ncbi.nlm.nih.gov/COG/
 .. _Lindgren: https://www.pdc.kth.se/resources/computers/lindgren
