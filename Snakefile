@@ -25,23 +25,53 @@ config["assembly_merge_rules"]["merge"] = {sample:expand("assembly/ray/{assembly
                                                   assembly_params="default",
                                                   kmer=config["ray_rules"]["kmers"],
                                                   sample=sample) for sample in config["ray_rules"]["samples"]}
+# add newbler merged assemblies to bowtie2 references for mapping
+config["bowtie2_rules"]["references"] = {m:expand("assembly/newbler/{merge}/454AllContigs.fna", merge=m) for m in config["assembly_merge_rules"]["merge"]}
+# add newbler merged assemblies to concoct assemblies
+config["concoct_rules"]["assemblies"] = {m:expand("assembly/newbler/{merge}/454AllContigs.fna", merge=m) for m in config["assembly_merge_rules"]["merge"]}
+
+# Show all bowtie2 logs and markduplicate percent duplications in the mapping report
+config["mapping_report_rules"]["bowtie2_logs"] = sorted(expand("mapping/bowtie2/{mapping_params}/{reference}/units/{unit}.log",
+                                                        mapping_params=config["bowtie2_rules"]["mapping_params"],
+                                                        reference=config["bowtie2_rules"]["references"],
+                                                        unit=config["bowtie2_rules"]["units"]))
+config["mapping_report_rules"]["markduplicates_metrics"] = sorted(expand("mapping/bowtie2/{mapping_params}/{reference}/units/{unit}.sorted.removeduplicates.metrics",
+                                                                  mapping_params=config["bowtie2_rules"]["mapping_params"],
+                                                                  reference=config["bowtie2_rules"]["references"],
+                                                                  unit=config["bowtie2_rules"]["units"]))
+# Show all assemblies except the cut up ones in the assembly report
+config["assembly_report_rules"]["assemblies"] = sorted(
+    expand("assembly/newbler/{merge}/454AllContigs.fna", merge=config["assembly_merge_rules"]["merge"]) +
+    expand("assembly/ray/{assembly_params}/{sample}/out_{kmer}/Contigs.fasta", assembly_params=config["ray_rules"]["assembly_params"], sample=config["ray_rules"]["samples"], kmer=config["ray_rules"]["kmers"]))
 
 
 
-#CONCOCT_COMMIT="https://raw.githubusercontent.com/inodb/snakemake-workflows/e1c376a46db8d88cd73fd10b00a152fa59c113db/"
-CONCOCT_COMMIT = "/glob/inod/github/snakemake-workflows/"
-include: CONCOCT_COMMIT + "bio/ngs/rules/quality_control/fastqc.rules"
-include: CONCOCT_COMMIT + "bio/ngs/rules/trimming/trimmomatic.rules"
-include: CONCOCT_COMMIT + "bio/ngs/rules/assembly/ray.rules"
-include: CONCOCT_COMMIT + "common/rules/track_dir.rules"
-include: CONCOCT_COMMIT + "bio/ngs/rules/assembly/merge.rules"
+
+SM_WORKFLOW_LOC="https://raw.githubusercontent.com/inodb/snakemake-workflows/fe913ac3a40387dbe26558ac35c8a807236e466a/"
+#SM_WORKFLOW_LOC = "/glob/inod/github/snakemake-workflows/"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/quality_control/fastqc.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/trimming/trimmomatic.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/assembly/ray.rules"
+include: SM_WORKFLOW_LOC + "common/rules/track_dir.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/assembly/merge.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/assembly/report.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/mapping/bowtie2.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/mapping/samtools.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/mapping/report.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/binning/concoct.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/annotation/prodigal.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/blast/rpsblast.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/annotation/hmmer.rules"
 
 localrules: track_changes
 
 
 rule report:
     input:
-        "report/fastqc/index.html"
+        "report/fastqc/index.html",
+        "report/assemblies/index.html",
+        "report/mapping/index.html",
+        "report/concoct/index.html"
     output:
         "report/index.html"
     shell:
@@ -49,6 +79,9 @@ rule report:
         (
             echo '<html><head><style>body {{ text-align: center }}</style></head><body>'
             echo "<a href='fastqc/index.html'>FastQC Results</a><br />"
+            echo "<a href='assemblies/index.html'>Assembly Results</a><br />"
+            echo "<a href='mapping/index.html'>Mapping Results</a><br />"
+            echo "<a href='concoct/index.html'>CONCOCT Results</a><br />"
             echo '</body></html>'
         ) > {output}
         """

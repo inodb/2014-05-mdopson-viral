@@ -1,0 +1,17 @@
+{
+    "assembly_report_rules": {
+        "load_env": "source activate masmvali-env"
+    },
+    "mapping_report_rules": {
+        "load_env": "source activate masmvali-env"
+    },
+    "assembly_merge_rules": {
+        "load_env": "export METASSEMBLE_DIR=/glob/inod/github/metassemble && source activate masmvali-env && module load bioinfo-tools 454-dataanalysis/2.6",
+        "merge": {
+            "large_contigsx2": [
+                "test_data/large_contigs/contigs.fa",
+                "test_data/large_contigs/contigs.fa"
+            ]
+        }
+    }
+}

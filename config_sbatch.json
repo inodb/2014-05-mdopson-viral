@@ -82,11 +82,19 @@
         "extra_parameters": ""
     },
     "schedule_rpsblast_run": {
-        "days": 0,
-        "hours": 12,
+        "days": 1,
+        "hours": 0,
         "minutes": 0,
-        "partition": "node",
-        "cores": "32",
+        "partition": "core",
+        "cores": "14",
+        "extra_parameters": ""
+    },
+    "schedule_hmmer_run": {
+        "days": 1,
+        "hours": 0,
+        "minutes": 0,
+        "partition": "core",
+        "cores": "16",
         "extra_parameters": ""
     },
     "schedule_trimmomatic_pe": {
@@ -120,6 +128,7 @@
     "schedule_fastqc_all": "schedule_short",
     "schedule_trimmomatic_all": "schedule_short",
     "schedule_rpsblast_run_all": "schedule_default",
+    "schedule_hmmer_run_all": "schedule_default",
     "schedule_prodigal_run": "schedule_bedtools_coverage",
     "schedule_prodigal_run_all": "schedule_default",
     "schedule_bam_sort_name": "schedule_bam_sort",

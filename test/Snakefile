@@ -1,0 +1,20 @@
+__author__ = "inodb http://ino.pm"
+__license__ = "MIT"
+
+
+configfile: "config.json"
+
+
+import os
+import glob
+
+config["assembly_report_rules"]["assemblies"] = sorted(glob.glob("../results/assembly/ray/default/*/out_*/Contigs.fasta") + glob.glob("../results/assembly/newbler/*/454AllContigs.fna"))
+config["mapping_report_rules"]["bowtie2_logs"] = glob.glob("../results/mapping/bowtie2/default/*/units/*[0-9].log")
+config["mapping_report_rules"]["markduplicates_metrics"] = glob.glob("../results/mapping/bowtie2/default/*/units/*.removeduplicates.metrics")
+
+
+#SM_WORKFLOW_LOC="https://raw.githubusercontent.com/inodb/snakemake-workflows/e1c376a46db8d88cd73fd10b00a152fa59c113db/"
+SM_WORKFLOW_LOC = "/glob/inod/github/snakemake-workflows/"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/assembly/report.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/assembly/merge.rules"
+include: SM_WORKFLOW_LOC + "bio/ngs/rules/mapping/report.rules"
