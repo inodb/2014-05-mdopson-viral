@@ -15,6 +15,10 @@ microbial Single Copy Genes (SCGs).
 
 **UPDATE 2014-12** Redid full analysis after noticing adapter content in assemblies.
 
+Report
+===========
+- http://inodb.github.io/2014-05-mdopson-viral/
+
 Install Snakemake
 ===================
 `Snakemake <https://bitbucket.org/johanneskoester/snakemake/wiki/Home>`_ has been used to make the analysis reproducible. Snakemake uses
@@ -62,10 +66,6 @@ be run with ``-n``:
 
     snakemake -j 16 --debug -np --debug fastqc_all
 
-
-Report
-===========
-- http://inodb.github.io/2014-05-mdopson-viral/
 
 Directory structure on milou
 ============================
