@@ -210,6 +210,11 @@ Generate a report of the evaluation
 
     concoct_eval_report
 
+Used IPython notebook to gerenate an overview of the bins. See `pog_hmmer
+notebook
+<http://nbviewer.ipython.org/github/inodb/2014-05-mdopson-viral/blob/master/notebooks/pog_hmmer.ipynb>`_
+    
+
 Old pre-adapter contamination filtering analysis steps
 ======================================================
 The old pre-adaptar contamination filtering analysis shows similar commands that can be directly pasted 

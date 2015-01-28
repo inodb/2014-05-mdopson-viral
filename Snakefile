@@ -71,7 +71,8 @@ rule report:
         "report/fastqc/index.html",
         "report/assemblies/index.html",
         "report/mapping/index.html",
-        "report/concoct/index.html"
+        "report/concoct/index.html",
+        "report/notebooks_output/bin_overview.html"
     output:
         "report/index.html"
     shell:
@@ -82,6 +83,8 @@ rule report:
             echo "<a href='assemblies/index.html'>Assembly Results</a><br />"
             echo "<a href='mapping/index.html'>Mapping Results</a><br />"
             echo "<a href='concoct/index.html'>CONCOCT Results</a><br />"
+            echo "<a href='notebooks_output/bin_overview.html'>Binning Overview</a><br />"
+            echo "<a href='http://nbviewer.ipython.org/urls/github.com/inodb/2014-05-mdopson-viral/tree/master/notebooks'>Notebooks</a><br />"
             echo '</body></html>'
         ) > {output}
         """
